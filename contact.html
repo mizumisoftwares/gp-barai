@@ -32,35 +32,34 @@
             <p>Connect directly with the Panchayat office or register complaints</p>
         </div>
 
-        <form id="grievanceForm" onsubmit="handleFormSubmit(event)">
-            <div class="form-group">
-                <label for="name">Your Full Name</label>
-                <input type="text" id="name" required placeholder="Enter your full name">
-            </div>
+        <form id="grievanceForm" onsubmit="sendToWhatsApp(event)">
+    <div class="form-group">
+        <label for="name">Your Full Name</label>
+        <input type="text" id="name" required placeholder="Enter your full name">
+    </div>
 
-            <div class="form-group">
-                <label for="phone">Mobile Number</label>
-                <input type="tel" id="phone" required placeholder="Enter 10-digit mobile number">
-            </div>
+    <div class="form-group">
+        <label for="phone">Mobile Number</label>
+        <input type="tel" id="phone" required placeholder="Enter 10-digit mobile number">
+    </div>
 
-            <div class="form-group">
-                <label for="category">Subject / Issue Type</label>
-                <select id="category">
-                    <option value="infrastructure">Road/Drainage Issue</option>
-                    <option value="water">Water Supply / Handpump Repair</option>
-                    <option value="housing">PMAY Housing Query</option>
-                    <option value="other">General Grievance / Suggestion</option>
-                </select>
-            </div>
+    <div class="form-group">
+        <label for="category">Subject / Issue Type</label>
+        <select id="category">
+            <option value="Road/Drainage Issue">Road/Drainage Issue</option>
+            <option value="Water Supply / Handpump Repair">Water Supply / Handpump Repair</option>
+            <option value="PMAY Housing Query">PMAY Housing Query</option>
+            <option value="General Grievance / Suggestion">General Grievance / Suggestion</option>
+        </select>
+    </div>
 
-            <div class="form-group">
-                <label for="message">Detailed Message / Application</label>
-                <textarea id="message" required placeholder="Type your concern or request clearly..."></textarea>
-            </div>
+    <div class="form-group">
+        <label for="message">Detailed Message / Application</label>
+        <textarea id="message" required placeholder="Type your concern or request clearly..."></textarea>
+    </div>
 
-            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Submit to Panchayat Office</button>
-            <div id="form-alert"></div>
-        </form>
+    <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Submit via WhatsApp</button>
+</form>
     </div>
 
     <footer>
