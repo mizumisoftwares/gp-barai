@@ -21,18 +21,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Simple Grievance Form Handling
-function handleFormSubmit(event) {
+function sendToWhatsApp(event) {
+    // Prevent the form from refreshing the page
     event.preventDefault();
+
+    // 1. Get all the values from the form
     const name = document.getElementById('name').value;
-    const alertBox = document.getElementById('form-alert');
-    
-    alertBox.style.display = 'block';
-    alertBox.style.padding = '10px';
-    alertBox.style.backgroundColor = '#d4edda';
-    alertBox.style.color = '#155724';
-    alertBox.style.borderRadius = '4px';
-    alertBox.style.marginTop = '15px';
-    alertBox.innerHTML = `Thank you, <strong>${name}</strong>! Your application/grievance has been registered successfully with Gram Panchayat Barai office.`;
-    
-    document.getElementById('grievanceForm').reset();
+    const phone = document.getElementById('phone').value;
+    const category = document.getElementById('category').value;
+    const message = document.getElementById('message').value;
+
+    // 2. Format the message for WhatsApp (using * for bold text)
+    const whatsappText = `*New Grievance / Contact Request*%0A%0A*Name:* ${name}%0A*Mobile:* ${phone}%0A*Subject:* ${category}%0A*Message:* ${message}`;
+
+    // 3. Your WhatsApp Number (no '+' or leading zeros)
+    const whatsappNumber = "918115749248";
+
+    // 4. Create the final WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
+    // 5. Open WhatsApp in a new tab/window
+    window.open(whatsappURL, '_blank');
 }
